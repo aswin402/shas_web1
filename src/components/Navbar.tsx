@@ -49,15 +49,31 @@ export function Navbar() {
         }`}
       >
         {/* Top Utility Bar */}
-        <div className="bg-primary text-[9px] md:text-[10px] py-2.5 text-cream/90 text-center font-body font-bold tracking-[0.12em] uppercase border-b border-white/5">
-          <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 px-4">
-            <span className="flex items-center gap-1.5"><Truck className="w-3.5 h-3.5 text-clay" /> Free Insured Shipping</span>
-            <span className="hidden sm:inline text-clay/40">|</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-clay" /> Hallmarked Jewellery</span>
-            <span className="hidden sm:inline text-clay/40">|</span>
-            <span className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-clay" /> Lifetime Plating Warranty</span>
-            <span className="hidden sm:inline text-clay/40">|</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-clay" /> Secure Payments</span>
+        <div className="bg-primary text-[9px] md:text-[10px] py-2.5 text-cream/90 font-body font-bold tracking-[0.12em] uppercase border-b border-white/5 overflow-hidden w-full relative">
+          <div className="flex w-max animate-marquee whitespace-nowrap select-none pointer-events-none gap-x-12">
+            {/* First Set of Items */}
+            <div className="flex items-center gap-x-12 px-6">
+              <span className="flex items-center gap-1.5"><Truck className="w-3.5 h-3.5 text-clay" /> Free Insured Shipping</span>
+              <span className="text-clay/40">|</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-clay" /> Hallmarked Jewellery</span>
+              <span className="text-clay/40">|</span>
+              <span className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-clay" /> Lifetime Plating Warranty</span>
+              <span className="text-clay/40">|</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-clay" /> Secure Payments</span>
+              <span className="text-clay/40">|</span>
+            </div>
+
+            {/* Second Set of Items (Duplicate for seamless loop) */}
+            <div className="flex items-center gap-x-12 px-6">
+              <span className="flex items-center gap-1.5"><Truck className="w-3.5 h-3.5 text-clay" /> Free Insured Shipping</span>
+              <span className="text-clay/40">|</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-clay" /> Hallmarked Jewellery</span>
+              <span className="text-clay/40">|</span>
+              <span className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-clay" /> Lifetime Plating Warranty</span>
+              <span className="text-clay/40">|</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-clay" /> Secure Payments</span>
+              <span className="text-clay/40">|</span>
+            </div>
           </div>
         </div>
 
