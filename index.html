@@ -21,6 +21,32 @@
       }(window.location));
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
+    <!-- Intercept and rewrite absolute image paths on subfolder deployments -->
+    <script type="text/javascript">
+      (function() {
+        var base = '/shas_web1/';
+        if (window.location.pathname.startsWith(base)) {
+          var descriptor = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src');
+          var originalSet = descriptor.set;
+          Object.defineProperty(HTMLImageElement.prototype, 'src', {
+            set: function(val) {
+              if (typeof val === 'string') {
+                var origin = window.location.origin;
+                if (val.startsWith(origin + '/images/')) {
+                  val = val.replace(origin + '/images/', origin + base + 'images/');
+                } else if (val.startsWith(origin + '/img/')) {
+                  val = val.replace(origin + '/img/', origin + base + 'img/');
+                }
+              }
+              originalSet.call(this, val);
+            },
+            get: descriptor.get,
+            configurable: true,
+            enumerable: true
+          });
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
