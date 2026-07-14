@@ -34,7 +34,7 @@ export function RootLayout() {
         </div>
       )}
       <Navbar />
-      <main className="pt-[136px] md:pt-[148px]">
+      <main className="pt-[120px] md:pt-[132px]">
         <Outlet />
       </main>
       <Footer />

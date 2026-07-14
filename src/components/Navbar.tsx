@@ -78,7 +78,7 @@ export function Navbar() {
         </div>
 
         <div className="border-b border-border/40">
-          <div className="max-w-[1400px] mx-auto flex items-center justify-between h-24 md:h-[104px] section-padding">
+          <div className="max-w-[1400px] mx-auto flex items-center justify-between h-20 md:h-[88px] section-padding">
             {/* Logo */}
             <Link
               to="/"
@@ -87,7 +87,7 @@ export function Navbar() {
               <img
                 src={shasLogo}
                 alt="SHAS Jewellery Logo"
-                className="h-16 md:h-22 w-auto object-contain"
+                className="h-13 md:h-18 w-auto object-contain"
               />
             </Link>
 
@@ -199,7 +199,7 @@ export function Navbar() {
             className="absolute inset-0 bg-dark-luxury/30 backdrop-blur-sm"
             onClick={() => setIsMobileOpen(false)}
           />
-          <div className="absolute top-[96px] md:top-[104px] right-0 w-full sm:w-80 h-[calc(100dvh-96px)] md:h-[calc(100dvh-104px)] bg-white border-l border-border overflow-y-auto">
+          <div className="absolute top-[115px] md:top-[127px] right-0 w-full sm:w-80 h-[calc(100dvh-115px)] md:h-[calc(100dvh-127px)] bg-white border-l border-border overflow-y-auto">
             <div className="p-6 space-y-1">
               {navLinks.map((link) => (
                 <div key={link.label}>
