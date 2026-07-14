@@ -1,0 +1,125 @@
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { ArrowRight, Heart, Leaf, ShieldCheck, Truck } from 'lucide-react';
+import heroBg from '@/assets/herologo.png';
+import heroBgMob from '@/assets/herologomob.png';
+
+export function HeroSection() {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
+  return (
+    <section
+      ref={ref}
+      className="relative bg-cream flex flex-col items-stretch overflow-hidden"
+    >
+      {/* Hero Main Area */}
+      <div className="min-h-[calc(100dvh-180px)] md:min-h-[calc(100dvh-200px)] flex flex-col md:flex-row items-stretch">
+        {/* Left Column (Content) */}
+        <div className="flex-1 flex items-center z-10 px-6 py-16 md:py-24 md:px-10 lg:px-16 xl:px-20">
+          <div
+            className={`max-w-xl transition-all duration-700 delay-200 ${
+              isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
+            {/* Heading */}
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold text-primary leading-[1.15] mb-4">
+              Crafted to<br />
+              Celebrate Every<br />
+              Moment
+            </h1>
+
+            {/* Description */}
+            <p className="text-sm sm:text-base md:text-lg text-[#2A2020] leading-relaxed mb-8 max-w-lg font-body font-medium">
+              Timeless jewellery inspired by tradition,<br className="hidden sm:inline" />
+              crafted for today's women.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex">
+              <a
+                href="/shop"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-clay text-white text-xs font-body font-bold uppercase tracking-[0.2em] rounded transition-all duration-300 hover:bg-burnt-gold active:scale-[0.98] shadow-sm"
+              >
+                Shop Collection
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column (Image) */}
+        <div className="flex-1 relative min-h-[350px] md:min-h-0 select-none pointer-events-none">
+          <picture>
+            <source srcSet={heroBg} media="(min-width: 768px)" />
+            <img
+              src={heroBgMob}
+              alt="SHAS Jewellery"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+          </picture>
+          {/* Soft gradient overlay to bleed into ivory */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-transparent to-transparent hidden md:block" />
+          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent md:hidden" />
+        </div>
+      </div>
+
+      {/* Trust Strip */}
+      <div className="bg-primary py-8 sm:py-10 md:py-12 px-6 md:px-10 lg:px-16 border-t border-white/10 w-full z-10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 lg:gap-8">
+          {/* Handcrafted */}
+          <div className="flex items-center gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
+            <Heart className="w-8 h-8 text-clay shrink-0" />
+            <div>
+              <p className="text-sm sm:text-base font-heading font-bold uppercase tracking-wider text-cream leading-tight">
+                Handcrafted
+              </p>
+              <p className="text-[11px] sm:text-xs md:text-sm font-body text-white/60 mt-1 leading-tight">
+                With love by skilled artisans
+              </p>
+            </div>
+          </div>
+
+          {/* Hallmarked */}
+          <div className="flex items-center gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
+            <ShieldCheck className="w-8 h-8 text-clay shrink-0" />
+            <div>
+              <p className="text-sm sm:text-base font-heading font-bold uppercase tracking-wider text-cream leading-tight">
+                Hallmarked
+              </p>
+              <p className="text-[11px] sm:text-xs md:text-sm font-body text-white/60 mt-1 leading-tight">
+                Certified quality and authenticity
+              </p>
+            </div>
+          </div>
+
+          {/* Free Delivery */}
+          <div className="flex items-center gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
+            <Truck className="w-8 h-8 text-clay shrink-0" />
+            <div>
+              <p className="text-sm sm:text-base font-heading font-bold uppercase tracking-wider text-cream leading-tight">
+                Free Delivery
+              </p>
+              <p className="text-[11px] sm:text-xs md:text-sm font-body text-white/60 mt-1 leading-tight">
+                Insured and express delivery worldwide
+              </p>
+            </div>
+          </div>
+
+          {/* Sustainable */}
+          <div className="flex items-center gap-4 sm:gap-5 pr-2">
+            <Leaf className="w-8 h-8 text-clay shrink-0" />
+            <div>
+              <p className="text-sm sm:text-base font-heading font-bold uppercase tracking-wider text-cream leading-tight">
+                Sustainable
+              </p>
+              <p className="text-[11px] sm:text-xs md:text-sm font-body text-white/60 mt-1 leading-tight">
+                Ethically sourced and eco-friendly
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

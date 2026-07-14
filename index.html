@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shop handcrafted bronze, marble & wooden statues online in India. Ganesha, Buddha & temple idols by skilled artisans. Pan-India delivery, COD available." />
+    <meta name="keywords" content="handcrafted statues, bronze statues, marble statues, Ganesha statue, Buddha statue, temple statues, garden sculptures, home decor statues" />
+    <title>Shas Jewellery</title>
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div id="root">
+      <!-- Pre-rendered Initial Page Loading Skeleton -->
+      <style>
+        .initial-skeleton {
+          background-color: #faf6f0;
+          min-height: 100vh;
+          font-family: system-ui, -apple-system, sans-serif;
+          display: flex;
+          flex-direction: column;
+          margin: 0;
+          padding: 0;
+        }
+        .initial-nav {
+          height: 72px;
+          background-color: #fdfbf7;
+          border-bottom: 1px solid rgba(139, 115, 85, 0.15);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 2rem;
+          box-sizing: border-box;
+        }
+        .pulse-block {
+          background-color: rgba(139, 115, 85, 0.08);
+          border-radius: 6px;
+          animation: pulse 1.5s infinite ease-in-out;
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.6; }
+          50% { opacity: 1; }
+        }
+        .initial-hero {
+          flex: 1;
+          display: grid;
+          grid-template-columns: 1fr;
+          max-width: 1400px;
+          width: 100%;
+          margin: 0 auto;
+          padding: 3rem 2rem;
+          gap: 3rem;
+          box-sizing: border-box;
+        }
+        @media (min-width: 1024px) {
+          .initial-hero {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+          }
+        }
+      </style>
+      <div class="initial-skeleton">
+        <header class="initial-nav">
+          <div class="pulse-block" style="width: 120px; height: 28px;"></div>
+          <div style="display: flex; gap: 1.5rem;">
+            <div class="pulse-block" style="width: 60px; height: 16px;"></div>
+            <div class="pulse-block" style="width: 60px; height: 16px;"></div>
+            <div class="pulse-block" style="width: 60px; height: 16px;"></div>
+          </div>
+          <div style="display: flex; gap: 1rem;">
+            <div class="pulse-block" style="width: 32px; height: 32px; border-radius: 50%;"></div>
+            <div class="pulse-block" style="width: 32px; height: 32px; border-radius: 50%;"></div>
+          </div>
+        </header>
+        <main class="initial-hero">
+          <div class="pulse-block" style="width: 100%; aspect-ratio: 4/5; max-height: 500px;"></div>
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="pulse-block" style="width: 80px; height: 16px;"></div>
+            <div class="pulse-block" style="width: 90%; height: 48px;"></div>
+            <div class="pulse-block" style="width: 80%; height: 48px;"></div>
+            <div class="pulse-block" style="width: 100%; height: 96px; margin-top: 1rem;"></div>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+              <div class="pulse-block" style="width: 140px; height: 48px;"></div>
+              <div class="pulse-block" style="width: 140px; height: 48px;"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

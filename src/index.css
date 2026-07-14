@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'RupeeNumbers';
+  src: local('Inter'), local('Segoe UI'), local('Roboto'), local('Helvetica Neue'), local('Arial');
+  unicode-range: U+20B9, U+0030-0039, U+002C, U+002E;
+}
+
+/* ──────────────────────────────────────────────
+   SHAS Jewellery — Global Theme (V4 Custom)
+   ────────────────────────────────────────────── */
+
+@theme {
+  /* ── Surface Colors ── */
+  --color-cream: #F6EFE4;
+  --color-admin-bg: #F6EFE4;
+  --color-ivory: #F6EFE4;
+  --color-warm-beige: #E8D9C5;
+  --color-sand: #E8D9C5;
+
+  /* ── Text Colors ── */
+  --color-brown: #2A2020;
+  --color-deep-brown: #2A2020;
+  --color-muted-brown: #8A5260;
+
+  /* ── Accent Colors ── */
+  --color-temple-red: #5C1220;
+  --color-terracotta: #8B1E2E;
+  --color-deep-red: #5C1220;
+  --color-clay: #C08A2E;
+
+  /* ── Supporting Tones ── */
+  --color-burnt-gold: #9C6B1F;
+  --color-ruby: #8B1E2E;
+  --color-star-gold: #D9A441;
+  --color-hairline: #DCD3C5;
+
+  /* ── Utility Colors ── */
+  --color-border: #DCD3C5;
+  --color-border-light: #DCD3C5;
+  --color-dark-luxury: #5C1220;
+  --color-dark-luxury-light: #5C1220;
+
+  /* ── Semantic Aliases ── */
+  --color-background: #F6EFE4;
+  --color-foreground: #2A2020;
+  --color-primary: #5C1220;
+  --color-primary-foreground: #FFFFFF;
+  --color-muted: #E8D9C5;
+  --color-muted-foreground: #8A5260;
+  --color-accent: #C08A2E;
+  --color-accent-foreground: #FFFFFF;
+  --color-accent-hover: #9C6B1F;
+
+  /* ── Typography ── */
+  --font-heading: 'RupeeNumbers', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'RupeeNumbers', 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ── Radii ── */
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+
+  /* ── Spacing ── */
+  --spacing-section: 6rem;
+  --spacing-section-mobile: 3.5rem;
+
+  /* ── Animation ── */
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-fade-up: fade-up 0.8s ease-out both;
+}
+
+/* ── Keyframes ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Base Styles
+   ────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-cream text-brown font-body;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold text-deep-brown;
+    line-height: 1.15;
+  }
+
+  ::selection {
+    background: rgba(92, 18, 32, 0.2);
+    color: var(--color-deep-brown);
+  }
+
+  /* Remove horizontal overflow */
+  body, html {
+    overflow-x: hidden;
+  }
+
+  /* Focus ring style */
+  *:focus-visible {
+    outline: 2px solid rgba(92, 18, 32, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Utility Classes
+   ────────────────────────────────────────────── */
+
+@layer utilities {
+  /* Section padding utility */
+  .section-padding {
+    @apply px-5 md:px-10 lg:px-16 xl:px-20;
+  }
+
+  /* Section vertical spacing */
+  .section-spacing {
+    padding-top: var(--spacing-section-mobile);
+    padding-bottom: var(--spacing-section-mobile);
+  }
+  @media (min-width: 768px) {
+    .section-spacing {
+      padding-top: var(--spacing-section);
+      padding-bottom: var(--spacing-section);
+    }
+  }
+
+  /* Navigation text style */
+  .nav-link {
+    @apply text-xs font-body font-medium uppercase tracking-[0.15em] text-muted-brown;
+    transition: color 0.25s ease;
+  }
+  .nav-link:hover {
+    @apply text-temple-red;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
