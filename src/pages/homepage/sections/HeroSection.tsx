@@ -49,18 +49,15 @@ export function HeroSection() {
         </div>
 
         {/* Right Column (Image) */}
-        <div className="flex-1 relative min-h-[350px] md:min-h-0 select-none pointer-events-none">
+        <div className="flex-1 relative aspect-square sm:aspect-[4/3] md:aspect-auto md:min-h-0 select-none pointer-events-none">
           <picture>
             <source srcSet={heroBg} media="(min-width: 768px)" />
             <img
               src={heroBgMob}
               alt="SHAS Jewellery"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-contain object-center md:object-right"
             />
           </picture>
-          {/* Soft gradient overlay to bleed into ivory */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-transparent to-transparent hidden md:block" />
-          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent md:hidden" />
         </div>
       </div>
 
