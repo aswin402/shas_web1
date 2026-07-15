@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ArrowRight, Heart, Leaf, ShieldCheck, Truck } from 'lucide-react';
 import heroBg from '@/assets/shas_homepage_desktop.png';
@@ -5,6 +6,28 @@ import heroBgMob from '@/assets/shas_homepage_mob.png';
 
 export function HeroSection() {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = carouselRef.current;
+    if (!container) return;
+
+    const interval = setInterval(() => {
+      if (window.innerWidth >= 1024) return;
+
+      const width = container.offsetWidth;
+      const currentScroll = container.scrollLeft;
+      const maxScroll = container.scrollWidth - width;
+
+      if (currentScroll >= maxScroll - 10) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: width, behavior: 'smooth' });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -63,9 +86,12 @@ export function HeroSection() {
 
       {/* Trust Strip */}
       <div className="bg-primary py-8 sm:py-10 md:py-12 px-6 md:px-10 lg:px-16 border-t border-white/10 w-full z-10">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 lg:gap-8">
+        <div 
+          ref={carouselRef}
+          className="max-w-[1400px] mx-auto flex lg:grid lg:grid-cols-4 gap-x-6 lg:gap-8 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory scroll-smooth scrollbar-none"
+        >
           {/* Handcrafted */}
-          <div className="flex items-center gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
+          <div className="w-full shrink-0 snap-center lg:w-auto lg:shrink-0 flex items-center justify-center lg:justify-start gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
             <Heart className="w-8 h-8 text-clay shrink-0" />
             <div>
               <p className="text-sm sm:text-base font-heading font-bold uppercase tracking-wider text-cream leading-tight">
@@ -78,7 +104,7 @@ export function HeroSection() {
           </div>
 
           {/* Hallmarked */}
-          <div className="flex items-center gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
+          <div className="w-full shrink-0 snap-center lg:w-auto lg:shrink-0 flex items-center justify-center lg:justify-start gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
             <ShieldCheck className="w-8 h-8 text-clay shrink-0" />
             <div>
               <p className="text-sm sm:text-base font-heading font-bold uppercase tracking-wider text-cream leading-tight">
@@ -91,7 +117,7 @@ export function HeroSection() {
           </div>
 
           {/* Free Delivery */}
-          <div className="flex items-center gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
+          <div className="w-full shrink-0 snap-center lg:w-auto lg:shrink-0 flex items-center justify-center lg:justify-start gap-4 sm:gap-5 pr-2 lg:border-r lg:border-white/10">
             <Truck className="w-8 h-8 text-clay shrink-0" />
             <div>
               <p className="text-sm sm:text-base font-heading font-bold uppercase tracking-wider text-cream leading-tight">
@@ -104,7 +130,7 @@ export function HeroSection() {
           </div>
 
           {/* Sustainable */}
-          <div className="flex items-center gap-4 sm:gap-5 pr-2">
+          <div className="w-full shrink-0 snap-center lg:w-auto lg:shrink-0 flex items-center justify-center lg:justify-start gap-4 sm:gap-5 pr-2">
             <Leaf className="w-8 h-8 text-clay shrink-0" />
             <div>
               <p className="text-sm sm:text-base font-heading font-bold uppercase tracking-wider text-cream leading-tight">
