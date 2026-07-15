@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: process.env.NODE_ENV === 'production' ? '/shas_web1/' : '/',
+  base: process.env.GITHUB_ACTIONS ? '/shas_web1/' : '/',
   server: {
     hmr: {
       overlay: true,
