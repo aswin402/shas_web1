@@ -20,7 +20,7 @@ export function HeroSection() {
             <img
               src={heroBgMob}
               alt="SHAS Jewellery Background"
-              className="w-full h-full object-cover object-[center_right] md:object-right"
+              className="w-full h-full object-cover object-top md:object-right"
             />
           </picture>
         </div>
@@ -35,14 +35,14 @@ export function HeroSection() {
             }`}
           >
             {/* Heading */}
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold text-primary leading-[1.15] mb-4">
+            <h1 className="font-heading text-[28px] sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold text-primary leading-[1.15] mb-4">
               Crafted to<br />
               Celebrate Every<br />
               Moment
             </h1>
 
             {/* Description */}
-            <p className="text-sm sm:text-base md:text-lg text-[#2A2020] leading-relaxed mb-8 max-w-lg font-body font-medium">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#2A2020] leading-relaxed mb-8 max-w-lg font-body font-medium">
               Timeless jewellery inspired by tradition,<br className="hidden sm:inline" />
               crafted for today's women.
             </p>
