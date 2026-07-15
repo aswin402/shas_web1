@@ -34,7 +34,7 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-8 justify-between">
           
           {/* Brand Column - Centered on mobile, left-aligned on desktop */}
-          <div className="w-full lg:w-[40%] space-y-[4vw] md:space-y-[2vw] pt-[45vw] lg:pt-[4.5vw] md:pt-[4.5vw] flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="w-full lg:w-[40%] space-y-[4vw] md:space-y-[2vw] pt-[60vw] lg:pt-[4.5vw] md:pt-[4.5vw] flex flex-col items-center lg:items-start text-center lg:text-left">
             <p className="text-xs md:text-sm leading-relaxed text-sand/80 max-w-md font-body px-4 lg:px-0">
               Timeless by Tradition. Handcrafted heritage and bridal jewellery designed to celebrate life's most precious moments. Hallmarked gold, silver, and temple collections.
             </p>
