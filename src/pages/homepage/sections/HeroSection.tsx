@@ -12,7 +12,7 @@ export function HeroSection() {
       className="relative bg-cream flex flex-col items-stretch overflow-hidden"
     >
       {/* Hero Main Area */}
-      <div className="relative min-h-[calc(100dvh-211px)] md:min-h-[calc(100dvh-237px)] flex items-center justify-start overflow-hidden">
+      <div className="relative min-h-[calc(100dvh-211px)] md:min-h-[calc(100dvh-237px)] flex items-start md:items-center justify-start overflow-hidden">
         {/* Background Image Container */}
         <div className="absolute inset-0 w-full h-full select-none pointer-events-none z-0">
           <picture>
@@ -23,12 +23,10 @@ export function HeroSection() {
               className="w-full h-full object-cover object-[center_right] md:object-right"
             />
           </picture>
-          {/* Subtle mobile overlay for readability */}
-          <div className="absolute inset-0 bg-cream/40 md:hidden z-10" />
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-10 lg:px-16 xl:px-20 py-16 md:py-24">
+        <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-10 lg:px-16 xl:px-20 pt-10 pb-24 md:py-24">
           <div
             className={`max-w-xl transition-all duration-700 delay-200 ${
               isVisible
