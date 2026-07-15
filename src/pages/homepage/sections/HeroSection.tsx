@@ -35,7 +35,7 @@ export function HeroSection() {
       className="relative bg-cream flex flex-col items-stretch overflow-hidden"
     >
       {/* Hero Main Area */}
-      <div className="relative min-h-[calc(100dvh-196px)] md:min-h-[calc(100dvh-170px)] flex items-start md:items-center justify-start overflow-hidden">
+      <div className="relative min-h-[calc(100svh-100px)] md:min-h-[calc(100vh-170px)] flex items-start md:items-center justify-start overflow-hidden">
         {/* Background Image Container */}
         <div className="absolute inset-0 w-full h-full select-none pointer-events-none z-0">
           <picture>
