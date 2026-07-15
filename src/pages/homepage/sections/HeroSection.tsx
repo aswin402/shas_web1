@@ -1,7 +1,7 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ArrowRight, Heart, Leaf, ShieldCheck, Truck } from 'lucide-react';
-import heroBg from '@/assets/herologo.png';
-import heroBgMob from '@/assets/herologomob.png';
+import heroBg from '@/assets/shas_homepage_desktop.png';
+import heroBgMob from '@/assets/shas_homepage_mob.png';
 
 export function HeroSection() {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
