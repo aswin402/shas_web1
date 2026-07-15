@@ -51,7 +51,7 @@ export function HeroSection() {
             <div className="flex">
               <a
                 href="/shop"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-clay text-white text-xs font-body font-bold uppercase tracking-[0.2em] rounded transition-all duration-300 hover:bg-burnt-gold active:scale-[0.98] shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-7 md:py-3.5 bg-clay text-white text-xs font-body font-bold uppercase tracking-[0.2em] rounded transition-all duration-300 hover:bg-burnt-gold active:scale-[0.98] shadow-sm"
               >
                 Shop Collection
                 <ArrowRight className="w-4 h-4" />
